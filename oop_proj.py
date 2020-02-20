@@ -1,35 +1,47 @@
 class Graph:
 
     def __init__(self):
+
         self.node = {}
-        self.link = {}
+        self.link = []
+        self.nodecounter = 0
 
-    def addNode(self, N):
-        self.node[self.Node.id] = N
+    def addNode(self, newnode):
 
+        self.node[self.nodecounter] = newnode
+        self.nodecounter += 1
 
-    def delNode(self, id):
-        del self.node[self.Node.id]
+    def delNode(self, Id):
+
+        del self.node[self.nodecounter]
 
     def addLink(self, innode, outnode):
+
+        self.link.append((innode, outnode))
+
+
+    def delLink(self, innode, outnode):
         
-
-    def delLink(self):
-        pass
+        self.link.remove((innode, outnode))
 
 
-
-class Node(Graph):
-    def __init__(self, id, Location, Degrees):
-        self.id = id
+class Node:
+    def __init__(self, Id, Location, Degrees):
+        self.Id = Id
         self.Location = Location
         self.Degrees = Degrees
 
-class Link(Graph) :
+class Link:
     def __init__(self, InNodeId, OutNodeId):
         self.InNodeId = InNodeId
         self.OutNodeId = OutNodeId
 
 
 if __name__ == "__main__":
-    pass
+    G = Graph
+    G.addNode(Node(0, 13, 4))
+    G.addNode(Node(1, 18, 3))
+    G.addLink(Link(0, 1))
+
+
+
