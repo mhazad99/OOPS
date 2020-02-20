@@ -1,17 +1,18 @@
 class Graph:
-    
+
     def __init__(self):
-        self.Node = {}
-        self.Link = {}
+        self.node = {}
+        self.link = {}
 
-    def addNode(self, node):
-        pass
+    def addNode(self, N):
+        self.node[self.Node.id] = N
 
-    def delNode(self):
-        pass
 
-    def addLink(self):
-        pass
+    def delNode(self, id):
+        del self.node[self.Node.id]
+
+    def addLink(self, innode, outnode):
+        
 
     def delLink(self):
         pass
@@ -29,4 +30,6 @@ class Link(Graph) :
         self.InNodeId = InNodeId
         self.OutNodeId = OutNodeId
 
-    
+
+if __name__ == "__main__":
+    pass
